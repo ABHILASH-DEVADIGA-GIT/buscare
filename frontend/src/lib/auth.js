@@ -27,3 +27,8 @@ export const clearAuthData = () => {
 export const isAuthenticated = () => {
   return !!getToken();
 };
+
+// Alias for legacy usage in App.js (used with `await getAuthUser()`)
+export const getAuthUser = async () => {
+  return getUser();
+};
