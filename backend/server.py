@@ -1782,11 +1782,14 @@ async def health_check():
 # Include router
 app.include_router(api_router)
 
+
 # CORS
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
+    allow_origins=["*"],  # allow all domains
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
     allow_methods=["*"],
     allow_headers=["*"],
 )
