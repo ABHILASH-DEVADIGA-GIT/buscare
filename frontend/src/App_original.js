@@ -14,7 +14,7 @@ import FinancialPage from '@/pages/FinancialPage';
 import MechanicPage from '@/pages/MechanicPage';
 import UserMasterPage from '@/pages/UserMasterPage';
 import ClientManagementPage from '@/pages/ClientManagementPage';
-import { getAuthUser } from '@/lib/auth';
+import { getUser } from '@/lib/auth';
 import { toast } from 'sonner';
 import '@/index.css';
 
@@ -28,7 +28,7 @@ function App() {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const userData = await getAuthUser();
+          const userData = await getUser();
           setUser(userData);
         }
       } catch (error) {
@@ -39,8 +39,8 @@ function App() {
       }
     };
 
-    checkAuth();
-  }, []);
+  checkAuth();
+}, []);
 
   const handleLogin = (userData, token) => {
     localStorage.setItem('token', token);
