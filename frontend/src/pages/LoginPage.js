@@ -75,7 +75,7 @@ const LoginPage = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <img 
-            src="public/logo.png" 
+            src="/logo.png" 
             alt="BSP Tech Solutions" 
             className="h-20 w-auto mx-auto mb-4 rounded-lg"
           />
