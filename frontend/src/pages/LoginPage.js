@@ -72,7 +72,7 @@ const LoginPage = () => {
         <LanguageSwitcher variant="default" />
       </div>
       
-      <div className="w-full max-w-md">
+      {/*<div className="w-full max-w-md">
         <div className="text-center mb-8">
           <img 
             src="/Logo.png" 
@@ -86,7 +86,31 @@ const LoginPage = () => {
           <CardHeader>
             <CardTitle>{t('sign_in')}</CardTitle>
             <CardDescription>{t('enter_credentials')}</CardDescription>
+          </CardHeader>*/}
+
+       <div className="w-full max-w-md">
+        <Card className="border-slate-200 shadow-md overflow-hidden">
+          <CardHeader className="text-center pt-8 pb-2">
+            {/* Logo inside the Card Header with increased size */}
+            <img 
+              src="/Logo.png" 
+              alt="BSP Tech Solutions" 
+              className="h-32 w-auto mx-auto mb-4 rounded-lg object-contain"
+            />
+            
+            {/* Platform Subtitle */}
+            <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-6">
+              {t('fleet_platform')}
+            </p>
+
+            <CardTitle className="text-2xl font-bold text-slate-900">
+              {t('sign_in')}
+            </CardTitle>
+            <CardDescription>
+              {t('enter_credentials')}
+            </CardDescription>
           </CardHeader>
+          <CardContent></CardContent>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -139,7 +163,7 @@ const LoginPage = () => {
               </Button>
             </form>
 
-            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            {/* <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
               <p className="text-xs font-semibold text-blue-900 mb-2">{t('demo_credentials')}:</p>
               <div className="text-xs text-blue-800 space-y-1">
                 <p><strong>{t('client_id')}:</strong> demo-client-001</p>
@@ -149,7 +173,7 @@ const LoginPage = () => {
                 <p><strong>{t('role_driver')}:</strong> driver@demo.com / driver123</p>
                 <p><strong>{t('role_mechanic')}:</strong> mechanic@demo.com / mech123</p>
               </div>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       </div>
