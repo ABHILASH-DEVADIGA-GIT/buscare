@@ -157,11 +157,6 @@ const LoginPage = () => {
       {/* Footer with BSP Logo and Copyright */}
       <div className="mt-8 text-center">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <img 
-            src="https://customer-assets.emergentagent.com/job_fleet-safety-2/artifacts/20zbg82a_1000574828.png" 
-            alt="BSP Tech Solutions" 
-            className="h-8 w-auto"
-          />
         </div>
         <p className="text-xs text-slate-600">
           © {new Date().getFullYear()} All rights reserved by BSP Tech Solutions
