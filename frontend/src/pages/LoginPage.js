@@ -95,13 +95,13 @@ const LoginPage = () => {
             <img 
               src="/Logo.png" 
               alt="BSP Tech Solutions" 
-              className="h-32 w-auto mx-auto mb-4 rounded-lg object-contain"
+              className="h-40 w-auto mx-auto mb-4 rounded-lg object-contain"
             />
             
             {/* Platform Subtitle */}
-            <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-6">
+            {/*<p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-6">
               {t('fleet_platform')}
-            </p>
+            </p>*/}
 
             <CardTitle className="text-2xl font-bold text-slate-900">
               {t('sign_in')}
