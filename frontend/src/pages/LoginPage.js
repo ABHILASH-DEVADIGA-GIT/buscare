@@ -75,7 +75,7 @@ const LoginPage = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <img 
-            src="https://customer-assets.emergentagent.com/job_fleet-safety-2/artifacts/ml89kwlc_image.png" 
+            src="https://customer-assets.emergentagent.com/job_fleet-safety-2/artifacts/20zbg82a_1000574828.png" 
             alt="BSP Tech Solutions" 
             className="h-20 w-auto mx-auto mb-4 rounded-lg"
           />
