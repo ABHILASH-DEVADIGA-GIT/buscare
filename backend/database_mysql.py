@@ -13,9 +13,9 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # MySQL connection
-MYSQL_URL = os.environ.get('MYSQL_URL', 'mysql+aiomysql://root:DtyGZaYngpsXINKnRTPtStHFgVXkVofn@trolley.proxy.rlwy.net:59156/buscare')
+MYSQL_URL = os.environ.get('MYSQL_URL', 'mysql://4EQYUkSgFFfYG8z.root:gVhGvvHTHMDmJ1Jp@gateway01.eu-central-1.prod.aws.tidbcloud.com:4000/buscare')
 
-MYSQL_URL_SYNC = os.environ.get('MYSQL_URL_SYNC', 'mysql+pymysql://root:DtyGZaYngpsXINKnRTPtStHFgVXkVofn@trolley.proxy.rlwy.net:59156/buscare')
+MYSQL_URL_SYNC = os.environ.get('MYSQL_URL_SYNC', 'mysql://4EQYUkSgFFfYG8z.root:gVhGvvHTHMDmJ1Jp@gateway01.eu-central-1.prod.aws.tidbcloud.com:4000/buscare')
 
 # Async engine for FastAPI
 async_engine = create_async_engine(MYSQL_URL, echo=False, pool_pre_ping=True)
