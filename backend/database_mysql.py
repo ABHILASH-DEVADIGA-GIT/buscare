@@ -18,11 +18,41 @@ MYSQL_URL = os.environ.get('MYSQL_URL', 'mysql://4EQYUkSgFFfYG8z.root:gVhGvvHTHM
 MYSQL_URL_SYNC = os.environ.get('MYSQL_URL_SYNC', 'mysql://4EQYUkSgFFfYG8z.root:gVhGvvHTHMDmJ1Jp@gateway01.eu-central-1.prod.aws.tidbcloud.com:4000/buscare')
 
 # Async engine for FastAPI
-async_engine = create_async_engine(MYSQL_URL, echo=False, pool_pre_ping=True)
-AsyncSessionLocal = sessionmaker(async_engine, class_=AsyncSession, expire_on_commit=False)
+# async_engine = create_async_engine(MYSQL_URL, echo=False, pool_pre_ping=True)
+# AsyncSessionLocal = sessionmaker(async_engine, class_=AsyncSession, expire_on_commit=False)
 
 # Sync engine for migrations
-sync_engine = create_engine(MYSQL_URL_SYNC, echo=False)
+# sync_engine = create_engine(MYSQL_URL_SYNC, echo=False)
+# SessionLocal = sessionmaker(bind=sync_engine)
+
+# --- UPDATED ENGINES ---
+
+# 1. Async engine for FastAPI (using aiomysql)
+async_engine = create_async_engine(
+    MYSQL_URL, 
+    echo=False, 
+    pool_pre_ping=True,
+    pool_recycle=300,
+    connect_args={
+        "ssl": {
+            "ca": "/etc/ssl/certs/ca-certificates.crt" # Required for Render/Linux
+        }
+    }
+)
+AsyncSessionLocal = sessionmaker(async_engine, class_=AsyncSession, expire_on_commit=False)
+
+# 2. Sync engine for migrations (using pymysql)
+sync_engine = create_engine(
+    MYSQL_URL_SYNC, 
+    echo=False,
+    pool_pre_ping=True,
+    pool_recycle=300,
+    connect_args={
+        "ssl": {
+            "ca": "/etc/ssl/certs/ca-certificates.crt"
+        }
+    }
+)
 SessionLocal = sessionmaker(bind=sync_engine)
 
 Base = declarative_base()
